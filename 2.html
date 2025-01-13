@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=" stylesheet" href="FormComponent.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+
+      var second=0;
+      function displaysecond(){
+        second+=1;
+        document.getElementById("seconddisplay");
+      }
+      setInterval(displaysecond,1000);
+      function redirectpage(){
+        if( second < 7){
+          window.location.href=" inscrire.html"
+        }
+        else if (second > 7){
+          window.location.href=" inscrire2.html"
+        }
+      }
+      
+    </script>
+      </head>
+    <body>
+        <div class="top-bar">
+          
+        <ul>
+            <label> Nous Suivre:</label> 
+            <li><a href="#"><ion-icon name="logo-facebook" style="color: rgb(26, 15, 15);"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter" style="color: rgb(81, 81, 238);"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin" style="color: rgb(5, 5, 27);"></ion-icon></a></li>
+        </ul>   
+        <span>
+            <ion-icon name="time-outline"></ion-icon><label>09h-18h00</label>
+            <ion-icon name="call-outline"></ion-icon><label>00033455543 </label>
+            
+        </span> 
+        </div>
+         
+       
+        <nav>
+            <div class="logo">
+                <div id="logo1">
+                <a href="#"><img src="1.jpeg"  alt="logo"></a></div>
+                <div id="logo2">
+                <a href="#"><img src="2.jpeg"  alt="logo"></a></div>
+                <div id="logo3">
+                  <a href="#"><img src="2.jpeg"  alt="logo"></a></div>
+            </div>
+            <div class="menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="2.html" class="menu-link" data-content="Accueil"> Accueil</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" data-content="Faqs">Faqs </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" data-content="Examens">Examens</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" data-content="Contact">Services</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" data-content="Espace Candidat">Espace Candidat</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="seconddisplay"> 
+        </div>
+        <h1> Formulaire d'inscription</h1>
+        <p> Remplissez chaque champ, avec justesse pour un parcours sans faille.</p>
+        <p> Votre succes commence par chaque detail.</p>
+
+       
+       <div className= " form-container">
+           <form name ="form"   id="form" action="php2.php"  method="post" >
+            <div class="mail">
+                  <label for="Email">Email<span>*</span>
+                 <button class="button"> ? </button></label><br>
+                  <input type="Email" name="Email" placeholder="  "   type="mail" required><br><br>
+            </div>
+                 <div id="div1">  
+                      <div class="photo">
+                        <label for="photo"> photo 4x4 sur fond blanc du candidat<span>
+                            * Taille limit 2Mo
+                              </span></label><br>
+                        <input id="photo"  name="photo" placeholder=" "  type="file" required><br><br>
+
+                      </div>
+                      <div class="mot">
+                      <label for="Mot de passe">Mot de passe<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                      <input id="password" name="pasword " placeholder="  " type="password" required><br><br>
+                      </div>
+                      <div class="pays">
+                      <label for=" pays de naissance">pays de naissance<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                       <select id="pays" name=" pays"  type="select" required>
+                        <option value="" selected hidden>choisis</option>
+                        <option value=" cameroon"  name=" pays"> Cameroon</option>
+                        <option value=" canada" name="pays"> Canada</option>
+                        <option value=" France" name="pays"> France</option> 
+                       </select><br><br><br>
+                     
+                      </div>
+                      <div class="nation">
+                     <label for=" Nationalite">Nationalite<span>*</span>
+                        <button class="button"> ? </button></label> <br>
+                     <select id="nationality" name=" nationality "  type="select" required>
+                      <option value="" selected hidden>choisis</option>
+                      <option value=" cameroonian" name="nationality"> Cameroon</option>
+                        <option value=" canadien" name="nationality"> Canada</option>
+                        <option value=" Francais" name="nationality"> France</option>
+                       </select><br><br><br>
+                    </div>
+                    <div class="langue">
+                      <label for="langue usuelle">langue usuelle<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                      <select id="langue" name=" langue "  type="select" required>
+                        <option value="" selected hidden>choisis</option>
+                        <option value=" anglais" name="langue"> anglais</option>
+                        <option value=" french" name="langue"> french</option>
+                        <option value=" spanish" name="langue"> spanish</option>
+                       </select><br><br><br>
+                     
+                    </div>
+                      <div class=" motif">
+                      <label for="Motif d'inscription">Motif d'inscription<span>*</span></label><br>
+                      <select id="inscription" name="inscription" type="select" required>
+                        <option value="" selected hidden>choisis</option>
+                        <option value=" money" name="inscription" > money</option>
+                        <option value=" family" name="inscription"> family</option>
+                        <option value=" love" name="innscription"> love</option>
+                       </select><br><br><br>
+                      </div>
+                      <div class="types de doc">
+                      <label for=" types de document">Types de document<span>*</span></label><br>
+                     <p> <input id="document" name=" document" placeholder="  " type="text" required><br><br></p>
+                      </div>
+                      <div class="face a">
+                      <label for=" Face avant">Face avant<span>
+                        * Taille limit 2Mo
+                          </span> </label></label><br>
+                   <input id=" avant"  name="avant" placeholder=" " type="file" required><br><br>
+                     </label><br>
+                      </div>
+                      
+                </div>
+
+                <div id="div2">    
+                    <div class="name">
+                      <label for="Nom(s)">Nom(s)<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                      <input id="nom" name="nom" placeholder="  " type="text" required><br><br>   
+                    </div>
+                    <div class="prenom">
+                      <label for=" prenom(s)">Prenom(s)<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                      <input id="prenom" name="prenom" placeholder="  " type="text" required><br><br>
+                    </div>
+                    <div class="div22">
+                       <label for=" Date de naissance">Date de naissance<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                       <input id="naissance" name="naissance" placeholder="  " type="date" required><br><br>
+                    </div>
+                    <div class="sex">
+                       <label for="Sexe">Sexe<span>*</span></label><br>
+                       <select id="sexe" name=" sexe"  type="select"required>
+                        <option value="" selected hidden>choisis</option>
+                        <option value=" male" name="sexe"> Male</option>
+                        <option value=" female" name="sexe"> Female</option>
+                        
+                       </select><br><br><br>
+                       
+                    </div>
+                    <div class="tel">
+                       <label for="Telephone">Telephone<span>*</span>
+                       </label><br>
+                <input id="Telephone" name="telephone" placeholder="  "  required><br><br>
+                    </div>
+                     <div class="code">
+                      <label for=" code candidat">code candidat<span>*</span>
+                        <button class="button"> ? </button></label><br>
+                      <input id="code" name="code "  type="text" placeholder=" avez vous deja passer le DELF? si oui indiquer votre code " required><br><br>
+                      </div>
+                      <div id="div5">
+                      <label for=" Numero de CNI ou passport">Numero de CNI ou passport<span>*</span></label><br>
+                      <input id="CNI" name="CNI "  placeholder="  " required><br><br>
+                     
+                      <label for="Face arriere">Face arriere<span>
+                        * Taille limit 2Mo
+                          </span> </label><br>
+                    <input id="arriere"  name="arriere"  type="file" placeholder=" " required><br><br>
+                      </div>
+                    </label><br>
+                      
+                </div>
+                
+                    <div id="div3">
+                      <P>TELECHARGEZ*</P>
+                    <div>
+                    <UL>
+                        <li> PHOTOCOPIE RECTO/VERSO DE LA PICE D'IDENTITER</li>
+                        <Li>01 PHOTO 4*4 COULEUR SUR FOND BLANC</Li>
+                    </UL>
+                    </div>
+                        <div class="check">
+                         <input type="checkbox" id="checkbox1" name="checkbox ">
+                        </div>
+
+                        <div class="label">
+                        <h6>j'autorise IFC a utiliser mes donnes pour des besions de formation</h6>
+                        
+                      </div>
+                        
+                    
+                    </div>
+           </form>
+       
+                        <div id="div4">
+                            <div class="logo">
+                             <a href="#"><img src="1.jpeg"  alt="logo"></a>
+                            </div>
+                            <div class="test">
+                                <h4> TEST DE CONNAISSANCE DU FRANCAIS POUR LE CANADA (TCF-CANADA)</h4>
+                            </div>
+                            <div class="inscription">
+                                <p> 01 inscription 210000 FCFA </p>
+                                <a href="#"><ion-icon name="checkmark-outline"></ion-icon></a>
+                            </div>
+                            <div class="total">
+                             <p>Total TTC 210000 FCFA</p>
+                            </div>
+                            <div class="box">
+                            <div class=" check">
+                              <input type="checkbox" id="checkbox2" name ="checkbox2 ">
+                            </div>
+                            <div class="phrase">
+                              je ne suis pas un robot.
+                            </div>
+                            </div>
+                            <div class="inscrire">
+                              <input type="submit"  onclick="redirectpage()"  value="inscrire maintenant">
+                               
+                            </div>
+                         </div>   
+                        </div>
+       </div>
+       <script src="inscrire.js">
+       </script>
+                   
+    </body>
+</html>
